@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+		
+		$('#lp-pom-button-97.click(function() {
+			$(".error).hide();
+			var hasError = false;
+			var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+			var emailblockReg = /^([\w-\.]+@(?!gmail.com)(?!yahoo.com)(?!hotmail.com)(?!aol.com)([\w-]+\.)+[\w-]{2,4})?$/;
+			
+			var emailaddressVal = $("#email").val();
+			if(emailaddressVal == ''){
+				$("#email").after('<span class="error">Please enter your email address.</span>');
+				hasError = true;
+			}else if(!emailReg.test(emailaddressVal)){
+				$("#email").after('<span class="error">Enter a valid email address.</span>');
+				hasError = true;
+			}else if (!emailblockReg.test(emailaddressVal)){
+				$("#email").after('<span class="error">No gmail, hotmail or yahoo.</span>');
+				hasError = true;				
+			}
+			
+			if(harError == true) {return false;}
+			else{
+				$("#email").after('<span class="error">Email accepted.</span>');
+				return false;
+			}
+		});
+	});
+</script>
